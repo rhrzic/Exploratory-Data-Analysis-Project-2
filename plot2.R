@@ -8,5 +8,9 @@ baltimore <- subset(NEI, fips=="24510")
 emission_totals <- tapply(baltimore$Emissions, baltimore$year, sum)
 
 #Plotting the answer
-plot(names(emission_totals), emission_totals, pch=20, col="darkgray", type="line", ylab="Total Emissions", xlab="Years", main="Baltimore")
+png("plot2.png")
+
+plot(names(emission_totals), emission_totals, pch=20, col="darkgray", type="line", ylab="Total PM2.5 emitted (tons)", xlab="Year", main="Total PM2.5 emitted, Baltimore City")
 points(names(emission_totals), emission_totals, pch=20, col="red")
+
+dev.off()
